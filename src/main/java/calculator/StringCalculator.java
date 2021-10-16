@@ -29,16 +29,19 @@ class StringCalculator {
     
     private int getSum(String [ ]numbers) throws Exception {
     	int sum = 0;
-    	for ( String number : numbers) {
-    		if(stringToInt(number) < 0) {
-    			throw new Exception("negatives not allowed"+number);
-    		}
-    	}
-    	
+    	isNegative(numbers);
     	for ( String number : numbers) {
     		sum +=stringToInt(number);
     	}
     	return sum;
+    }
+    
+    private void isNegative(String[ ] numbers) throws Exception {
+     	for ( String number : numbers) {
+    		if(stringToInt(number) < 0) {
+    			throw new Exception("negatives not allowed"+number);
+    		}
+    	}
     }
     
     private boolean isEmpty(String input) {
