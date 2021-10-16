@@ -13,12 +13,16 @@ class StringCalculator {
         }
         
         else {
-        	return getSum(numbers[0], numbers[1]);
+        	return getSum(numbers);
         }
     }
     
-    private int getSum(String num1, String num2) {
-    	return Integer.parseInt(num1)+Integer.parseInt(num2);
+    private int getSum(String [ ]numbers) {
+    	int sum = 0;
+    	for ( String number : numbers) {
+    		sum += Integer.parseInt(number);
+    	}
+    	return sum;
     }
     
     private boolean isEmpty(String input) {
