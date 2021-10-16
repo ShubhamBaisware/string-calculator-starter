@@ -3,7 +3,7 @@ package calculator;
 class StringCalculator {
 
     public int add(String input) {
-    	String [] numbers = input.split(",");
+    	
     	
         if ( isEmpty(input)) {
         	return 0;
@@ -13,14 +13,24 @@ class StringCalculator {
         }
         
         else {
+        	String delimeter = ",";
+        	if(input.matches("//(.*)\n(.*)")) {
+        		delimeter = Character.toString(input.charAt(2));
+        		input= input.substring(4);
+        	}
+        	String numbers[] = splitNumbers(input, delimeter + "|\n");
         	return getSum(numbers);
         }
+    }
+    
+    private String[ ] splitNumbers( String numbers, String divider) {
+    	return numbers.split(divider);
     }
     
     private int getSum(String [ ]numbers) {
     	int sum = 0;
     	for ( String number : numbers) {
-    		sum += Integer.parseInt(number);
+    		sum +=stringToInt(number);
     	}
     	return sum;
     }

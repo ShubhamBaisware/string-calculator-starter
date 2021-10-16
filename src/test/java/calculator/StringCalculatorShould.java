@@ -1,9 +1,7 @@
 package calculator;
 
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
-
 
 class StringCalculatorShould {
 	
@@ -31,8 +29,14 @@ class StringCalculatorShould {
     	assertEquals(3,stringCalculator.add("1,2"));
     }
     
+    // below method will take unknown numbers of arguments and returns the sum 
     @Test
     public void unknownNumbersOfArgs() {
     	assertEquals(15, stringCalculator.add("1,2,3,4,5"));
     }
+    @Test
+    public void testNewLine() {
+    	assertEquals(6, stringCalculator.add("1\n2,3"));
+    }
+    
 }
