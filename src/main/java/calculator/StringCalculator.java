@@ -2,7 +2,7 @@ package calculator;
 
 class StringCalculator {
 
-    public int add(String input) {
+    public int add(String input) throws Exception {
     	
     	
         if ( isEmpty(input)) {
@@ -27,8 +27,14 @@ class StringCalculator {
     	return numbers.split(divider);
     }
     
-    private int getSum(String [ ]numbers) {
+    private int getSum(String [ ]numbers) throws Exception {
     	int sum = 0;
+    	for ( String number : numbers) {
+    		if(stringToInt(number) < 0) {
+    			throw new Exception("negatives not allowed"+number);
+    		}
+    	}
+    	
     	for ( String number : numbers) {
     		sum +=stringToInt(number);
     	}
