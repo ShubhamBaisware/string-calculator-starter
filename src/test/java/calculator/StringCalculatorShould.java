@@ -55,4 +55,8 @@ class StringCalculatorShould {
 		}
     }
     
+    public void multiplyIfStartsWithMStar() {
+    	assertEquals(21, stringCalculator.add("M*,1,4,3"));
+    }
+    
 }

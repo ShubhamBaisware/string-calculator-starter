@@ -24,6 +24,9 @@ class StringCalculator {
     }
     
     private String[ ] splitNumbers( String numbers, String divider) {
+    	if(numbers.startsWith(numbers, 'M')) {
+    		return(numbers.split(",")); 
+    	}
     	return numbers.split(divider);
     }
     
@@ -36,11 +39,21 @@ class StringCalculator {
     	return sum;
     }
     
-    private void isNegative(String[ ] numbers) {
+    private int multiplyAndSum(String [ ] numbers) {
+    	
+    	int total=0;
+    	for( String number : numbers) {
+    		number
+    	}
+    }
+
+	private void isNegative(String[ ] numbers) {
     	for ( String number : numbers) {
     		if(stringToInt(number) < 0) {
     			throw new IllegalArgumentException("negatives not allowed"+number);
     		}
+    			
+    	
     	}
     }
     
